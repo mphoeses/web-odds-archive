@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常世界 · 世界杯赔率阅读笔记</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f4f8fb;
+      color: #1e2b3c;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 32px;
+      box-shadow: 0 12px 30px rgba(0, 40, 50, 0.06);
+      overflow: hidden;
+      padding: 2.5rem 2rem 3rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0b3a45;
+      border-left: 6px solid #2f9b8e;
+      padding-left: 1rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #4c6978;
+      margin-bottom: 2.2rem;
+      padding-left: 1.6rem;
+      font-weight: 380;
+      border-bottom: 1px dashed #c8dadf;
+      padding-bottom: 0.9rem;
+    }
+
+    .intro {
+      background: #edf6f4;
+      padding: 1.5rem 1.8rem;
+      border-radius: 24px;
+      margin-bottom: 2.2rem;
+      font-size: 1.05rem;
+      color: #1c3b45;
+      box-shadow: inset 0 2px 6px rgba(47, 155, 142, 0.08);
+    }
+
+    .intro p {
+      margin-bottom: 0.6rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+      margin: 2rem 0 2.4rem;
+    }
+
+    .card {
+      background: #f9fcfe;
+      border-radius: 20px;
+      padding: 1.5rem 1.3rem;
+      border: 1px solid #dce9ee;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(30, 70, 80, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      color: #0f4a53;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card h3::before {
+      content: "▸";
+      color: #2f9b8e;
+      font-weight: 600;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2c4958;
+    }
+
+    .quote-box {
+      background: #e1f0ec;
+      padding: 1.5rem 2rem;
+      border-radius: 28px;
+      margin: 2.2rem 0;
+      position: relative;
+      font-style: normal;
+      border-left: 5px solid #2f9b8e;
+    }
+
+    .quote-box::before {
+      content: "📌 延伸参考";
+      display: block;
+      font-weight: 560;
+      color: #0b5a5a;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+
+    .quote-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .link-sentence {
+      background: #ffffffd9;
+      padding: 1rem 1.6rem;
+      border-radius: 40px;
+      display: inline-block;
+      margin: 0.2rem 0 1.4rem;
+      border: 1px solid #bfdbd9;
+      font-size: 1.02rem;
+    }
+
+    .link-sentence a {
+      color: #0f6b6b;
+      font-weight: 520;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #8fcbc2;
+    }
+
+    .link-sentence a:hover {
+      color: #064a4a;
+      text-decoration-color: #2f9b8e;
+    }
+
+    .faq-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 2rem 0 1.6rem;
+    }
+
+    .faq-item {
+      background: #f6fafb;
+      border-radius: 24px;
+      padding: 1rem 1.6rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      color: #0b4d4d;
+      font-weight: 560;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+
+    .faq-item p {
+      color: #2b4452;
+      font-size: 0.95rem;
+    }
+
+    .outro {
+      margin-top: 2.6rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #d8e6e8;
+      font-size: 0.98rem;
+      color: #365a68;
+      text-align: center;
+    }
+
+    .outro span {
+      background: #e1ede9;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 1.6rem 1rem 2.2rem;
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+        padding-left: 0.8rem;
+      }
+
+      .subhead {
+        font-size: 1rem;
+        padding-left: 1rem;
+      }
+
+      .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .intro {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .quote-box {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .link-sentence {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>赔率笔记 · 日常对照</h1>
+  <div class="subhead">从查询出发，在数字与赛况之间延伸阅读</div>
+
+  <div class="intro">
+    <p>世界杯期间，不少人打开手机的第一件事不是看赛程，而是翻看最新的赔率波动。赔率表像一面镜子，映出市场对每一场比赛的预判——但它远不止于此。</p>
+    <p>一次日常查询，可能牵出两队历史交锋的脉络；一次数字对照，往往连带着阵容、伤病、战术风格的延伸阅读。赔率是一把钥匙，而非终点。</p>
+  </div>
+
+  <div class="grid-cards">
+    <div class="card">
+      <h3>查询即起点</h3>
+      <p>每天几分钟，扫一眼主要比赛的赔率变化，比只看赛果更有纵深感。同一场比赛，不同公司给出的数字差异里藏着信息。</p>
+    </div>
+    <div class="card">
+      <h3>对照见细节</h3>
+      <p>将赔率与球队近况、主客因素、舆论热度放在一起看，往往会发现数字背后的逻辑——这是延伸阅读最自然的入口。</p>
+    </div>
+  </div>
+
+  <div class="link-sentence">
+    如果想系统浏览各场次的即时数据，可以查看 <a href="https://web-odds-worldcup.com">世界杯赔率</a> 页面，那里每日更新主流市场的赔率变化与对比。
+  </div>
+
+  <div class="quote-box">
+    <p>引用一位资深数据爱好者的笔记：“赔率不是预测，而是一种概率语言。读懂了对比和趋势，才算真正开始使用它。” 日常查询时，不妨多留意数字的横向比较，而非只盯着单一数值。</p>
+  </div>
+
+  <div class="faq-mini">
+    <div class="faq-item">
+      <strong>❓ 为什么同一场比赛赔率总在变？</strong>
+      <p>受注量、球员信息更新、市场情绪等因素都会影响赔率。理解变动比记住某个静态数字更有价值。</p>
+    </div>
+    <div class="faq-item">
+      <strong>❓ 怎样把赔率当作延伸阅读的线索？</strong>
+      <p>比如某队赔率突然下调，可以顺藤摸瓜去查是否有主力复出、战术调整或外界消息，让一次查询变成一次深度浏览。</p>
+    </div>
+  </div>
+
+  <div class="outro">
+    <span>从日常查询到对照延伸，赔率不止是一个数字</span>
+  </div>
+</div>
+</body>
+</html>
