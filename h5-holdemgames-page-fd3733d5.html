@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>关于 H5-HoldemGames · 德州扑克游戏站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fae6cf 0%, #f2d5b3 50%, #eccaaa 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #2c2b28;
+        }
+
+        .card {
+            max-width: 780px;
+            width: 100%;
+            background: #fefcf7;
+            border-radius: 36px;
+            box-shadow: 0 12px 28px rgba(110, 75, 45, 0.10), 0 4px 12px rgba(0, 0, 0, 0.04);
+            padding: 3rem 2.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .card {
+                padding: 2rem 1.2rem;
+                border-radius: 28px;
+            }
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #edc9a9;
+            color: #3d2c1f;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            margin-bottom: 1.2rem;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: #362b21;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #dbaa7b;
+            padding-left: 1rem;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.65rem;
+                padding-left: 0.75rem;
+            }
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            background: #f7f0e6;
+            padding: 1.5rem 1.5rem;
+            border-radius: 24px;
+            margin-bottom: 2.2rem;
+            color: #3f352b;
+        }
+
+        .summary p {
+            margin-bottom: 0.8rem;
+        }
+
+        .summary p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.2rem;
+            margin: 2.2rem 0 2rem;
+        }
+
+        .highlight-item {
+            background: #f2ede6;
+            border-radius: 60px;
+            padding: 0.35rem 1.2rem 0.35rem 1.2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #3f3429;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #e7daca;
+            transition: background 0.15s, border-color 0.1s;
+        }
+
+        .highlight-item:hover {
+            background: #e5d4c0;
+            border-color: #bc9e80;
+        }
+
+        .section-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin: 2.2rem 0 0.8rem 0;
+            color: #4f3b2b;
+            border-bottom: 2px solid #eedbcb;
+            padding-bottom: 0.2rem;
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 1.8rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        @media (max-width: 520px) {
+            .usage-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+
+        .usage-card {
+            background: #f8f2ea;
+            padding: 1.2rem 1.2rem 1.4rem;
+            border-radius: 28px;
+            border: 1px solid #e8dccc;
+        }
+
+        .usage-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #4d3827;
+        }
+
+        .usage-card p {
+            font-size: 0.95rem;
+            color: #4c3d31;
+        }
+
+        .faq-mini {
+            background: #f5ede3;
+            border-radius: 28px;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0 2rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.7rem;
+            border-bottom: 1px dashed #dccbbc;
+            padding-bottom: 0.7rem;
+        }
+
+        .faq-mini details:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-mini summary {
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            color: #3d3025;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::before {
+            content: "▸";
+            margin-right: 8px;
+            color: #b9916f;
+            font-size: 1.1rem;
+            transition: transform 0.15s;
+        }
+
+        .faq-mini details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-mini details p {
+            margin-top: 0.6rem;
+            font-size: 0.92rem;
+            color: #4b3d30;
+            padding-left: 1.5rem;
+        }
+
+        .link-wrapper {
+            background: #ecddcd;
+            border-radius: 80px;
+            padding: 0.8rem 1.8rem;
+            display: inline-block;
+            margin-top: 0.8rem;
+        }
+
+        .link-wrapper a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #3c2b1d;
+            border-bottom: 2px solid #b3825b;
+            padding-bottom: 2px;
+            transition: color 0.1s, border-color 0.1s;
+            font-size: 1.05rem;
+        }
+
+        .link-wrapper a:hover {
+            color: #6f4e2e;
+            border-bottom-color: #6f4e2e;
+        }
+
+        .trust-note {
+            background: #f0e7dc;
+            border-radius: 24px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #54483b;
+            border-left: 4px solid #c9a483;
+            line-height: 1.7;
+        }
+
+        .footer-note {
+            margin-top: 2.2rem;
+            font-size: 0.85rem;
+            color: #6f5f4e;
+            text-align: center;
+            border-top: 1px solid #e7d6c4;
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+
+    <div class="hero-tag">站点介绍 · 产品说明</div>
+    <h1>关于 H5-HoldemGames<br>与德州扑克游戏</h1>
+
+    <div class="summary">
+        <p>H5-HoldemGames 是一个围绕德州扑克游戏搭建的轻量信息站点。它既不提供下载，也不涉及任何形式的真钱对局，而是以介绍、参考与索引的方式，帮助对这项扑克变体感兴趣的玩家找到适合自己的内容。</p>
+        <p>如果你正在寻找关于 <a href="https://h5-holdemgames.com" style="text-decoration: underline; color: #6f4e2e; font-weight: 500;">德州扑克游戏</a> 的规则说明、术语解释、入门思路或不同平台的基本特征，这个页面可以作为一份安静的起点材料。</p>
+    </div>
+
+    <div class="highlights">
+        <span class="highlight-item">♠ 规则整理</span>
+        <span class="highlight-item">♥ 术语对照</span>
+        <span class="highlight-item">♦ 入门参考</span>
+        <span class="highlight-item">♣ 平台索引</span>
+        <span class="highlight-item">策略概述</span>
+        <span class="highlight-item">无真钱环境</span>
+    </div>
+
+    <div class="section-title">站点特点与定位</div>
+    <p style="margin-bottom: 0.8rem;">这个页面在内容编排上更偏向于信息聚合与温和引导。没有排行榜、没有实时数据，也没有过度包装的标语。所有关于德州扑克游戏的条目都经过基本筛选，以可读性和实用性优先。</p>
+    <p style="margin-bottom: 0.5rem;">你可以在这里看到不同环节的说明——从下注结构、位置概念到常见起手牌建议，内容都保持相对克制的长度，不堆砌术语，也不刻意制造紧迫感。</p>
+
+    <div class="section-title">使用建议与场景</div>
+    <div class="usage-grid">
+        <div class="usage-card">
+            <h4>📖 新手熟悉规则</h4>
+            <p>如果你刚接触这项游戏，建议从基本手牌排名和翻前行动顺序开始参考。站内对公共牌结构有单独说明。</p>
+        </div>
+        <div class="usage-card">
+            <h4>🔄 回顾策略要点</h4>
+            <p>有一定经验的玩家可以查看位置价值、底池赔率以及常见持续下注情形的归纳，适合快速回顾。</p>
+        </div>
+        <div class="usage-card">
+            <h4>🧩 了解不同平台</h4>
+            <p>站点整理了一些可体验德州扑克游戏的线上环境（练习性质或娱乐赛），不涉及现金局和下载链接。</p>
+        </div>
+        <div class="usage-card">
+            <h4>📚 作为术语手册</h4>
+            <p>部分页面包含中英术语对照，适合在阅读英文文章或观看视频时对照查阅。</p>
+        </div>
+    </div>
+
+    <div class="faq-mini">
+        <details>
+            <summary>这个站点提供游戏下载或安装包吗？</summary>
+            <p>不提供。H5-HoldemGames 是一个纯信息页面，没有任何下载链接或客户端安装引导。所有提及的平台均以介绍和索引为目的。</p>
+        </details>
+        <details>
+            <summary>内容是否涉及真钱/博彩？</summary>
+            <p>不涉及。本站不推荐任何形式的真钱对局，也不包含充值、提现或博彩性质的内容。所有策略和说明都基于虚拟筹码或免费赛环境。</p>
+        </details>
+        <details>
+            <summary>信息的更新频率如何？</summary>
+            <p>站点内容会随着玩法环境或术语的变化做适度修订，但并非实时更新平台。我们更注重基础内容的准确与清晰。</p>
+        </details>
+    </div>
+
+    <div class="link-wrapper">
+        <a href="https://h5-holdemgames.com">德州扑克游戏</a>
+    </div>
+
+    <div class="trust-note">
+        <strong>可信说明：</strong>本页面仅作为产品与信息索引，不构成任何操作建议、盈利承诺或游戏推荐。所有涉及的游戏方式请在当地法律法规允许范围内进行，并注意合理分配时间与精力。我们鼓励理性参与，量力而行。
+    </div>
+
+    <div class="footer-note">
+        H5-HoldemGames · 内容参考卡片 · 非官方页 · 无真钱环境
+    </div>
+</div>
+</body>
+</html>
